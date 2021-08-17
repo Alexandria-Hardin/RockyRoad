@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,10 @@ namespace RockyRoad.Data
         [Required]
         public string Name { get; set; }
         public virtual ICollection<FavoritePath> FavoritePaths { get; set; } = new List<FavoritePath>();
-        
+
         //application user connection
+        [ForeignKey(nameof(Climber))]
+        public string ClimberId { get; set; }
+        public virtual Climber Climber { get; set; }
     }
 }
