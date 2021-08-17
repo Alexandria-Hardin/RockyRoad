@@ -58,6 +58,8 @@
     <Compile Include="FavoriteDetail.cs" />
     <Compile Include="FavoriteEdit.cs" />
     <Compile Include="FavoriteListItem.cs" />
+    <Compile Include="FavoritePathCreate.cs" />
+    <Compile Include="FavoritePathListItem.cs" />
     <Compile Include="LocationCreate.cs" />
     <Compile Include="LocationDetail.cs" />
     <Compile Include="LocationEdit.cs" />
