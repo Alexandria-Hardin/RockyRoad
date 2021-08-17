@@ -47,6 +47,13 @@ namespace RockyRoad.WebMVC.Controllers
 
             return View(model);
         }
+        public ActionResult Details(string state)
+        {
+            var svc = CreateLocationService();
+            var model = svc.GetLocationByState(state);
+
+            return View(model);
+        }
         private LocationService CreateLocationService()
         {
             var service = new LocationService();
