@@ -8,10 +8,10 @@ using RockyRoad.Models;
 
 namespace RockyRoad.Services
 {
-    public class FavoriteServices
+    public class FavoriteService
     {
         private readonly string _climberId;
-        public FavoriteServices(string climberId)
+        public FavoriteService(string climberId)
         {
             _climberId = climberId;
         }

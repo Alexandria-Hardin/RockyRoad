@@ -8,7 +8,7 @@ using RockyRoad.Models;
 
 namespace RockyRoad.Services
 {
-    public class LocationServices
+    public class LocationService
     {
         public bool CreateLocation(LocationCreate model)
         {

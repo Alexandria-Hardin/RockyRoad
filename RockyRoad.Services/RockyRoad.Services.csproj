@@ -54,9 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FavoriteServices.cs" />
-    <Compile Include="LocationServices.cs" />
-    <Compile Include="PathServices.cs" />
+    <Compile Include="FavoriteService.cs" />
+    <Compile Include="LocationService.cs" />
+    <Compile Include="PathService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

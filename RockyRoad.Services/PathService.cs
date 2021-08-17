@@ -9,7 +9,7 @@ using static RockyRoad.Data.Path;
 
 namespace RockyRoad.Services
 {
-    public class PathServices
+    public class PathService
     {
         public bool CreatePath(PathCreate model)
         {
