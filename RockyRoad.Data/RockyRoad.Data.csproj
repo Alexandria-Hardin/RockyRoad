@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Climber.cs" />
     <Compile Include="Favorite.cs" />
     <Compile Include="FavoritePath.cs" />
     <Compile Include="IdentityModels.cs" />

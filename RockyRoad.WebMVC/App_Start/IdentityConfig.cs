@@ -40,11 +40,23 @@ namespace RockyRoad.WebMVC
             : base(store)
         {
         }
+            //Update user
+            //var store = new UserStore<ApplicationUser>(context);
+            //var manager = new ApplicationUserManager(store);
+            //var user = manager.Users.FirstOrDefault(u => u.Id == id);
+            //user.Climber.FirstName = "EditedName";
+            //user.Climber.LastName = "EditedName";
+            //manager.Update(user);
 
-        public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context) 
+        public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options,Climber climber, IOwinContext context) 
         {
+            // Create user      
+            var store = new UserStore<ApplicationUser>((DbContext)context);
+            var user = new ApplicationUser() { Email = climber.Email, UserName = climber.Username, Climber = climber };
             var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<ApplicationDbContext>()));
-            // Configure validation logic for usernames
+            manager.Create(user, climber.Password);
+
+            //// Configure validation logic for usernames
             manager.UserValidator = new UserValidator<ApplicationUser>(manager)
             {
                 AllowOnlyAlphanumericUserNames = false,

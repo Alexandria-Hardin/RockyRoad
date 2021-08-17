@@ -18,6 +18,8 @@ namespace RockyRoad.Data
             // Add custom user claims here
             return userIdentity;
         }
+
+        public virtual Climber Climber { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
