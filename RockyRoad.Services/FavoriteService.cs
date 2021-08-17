@@ -29,7 +29,7 @@ namespace RockyRoad.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        public IEnumerable<FavoriteListItem> GetNotes()
+        public IEnumerable<FavoriteListItem> GetFavorites()
         {
             using (var ctx = new ApplicationDbContext())
             {
