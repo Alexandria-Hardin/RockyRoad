@@ -71,7 +71,7 @@ namespace RockyRoad.Services
             }
         }
 
-        public LocationDetail GetSongByState(string state)
+        public LocationDetail GetLocationByState(string state)
         {
             using (var ctx = new ApplicationDbContext())
             {
