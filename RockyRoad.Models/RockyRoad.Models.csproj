@@ -58,6 +58,10 @@
     <Compile Include="LocationDetail.cs" />
     <Compile Include="LocationEdit.cs" />
     <Compile Include="LocationListItem.cs" />
+    <Compile Include="PathCreate.cs" />
+    <Compile Include="PathDetail.cs" />
+    <Compile Include="PathEdit.cs" />
+    <Compile Include="PathListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

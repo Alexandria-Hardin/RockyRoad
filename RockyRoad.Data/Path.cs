@@ -35,6 +35,7 @@ namespace RockyRoad.Data
             [Display(Name = "5.13-5.15")]
             VeryDifficult
         }
+
         [Key]
         public int PathId { get; set; }
         [Required]
