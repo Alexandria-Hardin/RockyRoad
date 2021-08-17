@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LocationServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RockyRoad.Data\RockyRoad.Data.csproj">
+      <Project>{A430A2E6-54D6-40C1-9111-71FC42F097E6}</Project>
+      <Name>RockyRoad.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RockyRoad.Models\RockyRoad.Models.csproj">
+      <Project>{CFF4E22F-BB15-49D6-AFD8-22BA71A813D1}</Project>
+      <Name>RockyRoad.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
