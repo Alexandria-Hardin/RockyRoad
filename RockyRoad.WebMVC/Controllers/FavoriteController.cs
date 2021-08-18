@@ -56,7 +56,9 @@ namespace RockyRoad.WebMVC.Controllers
         }
         private FavoriteService CreateFavoriteService()
         {
-            var service = new FavoriteService();
+            //figure out how to connect climberId
+            var climberId = ;
+            var service = new FavoriteService(climberId);
             return service;
         }
         public ActionResult Edit(int id)
