@@ -48,13 +48,13 @@ namespace RockyRoad.WebMVC
             //user.Climber.LastName = "EditedName";
             //manager.Update(user);
 
-        public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options,Climber climber, IOwinContext context) 
+        public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context) 
         {
             // Create user      
-            var store = new UserStore<ApplicationUser>((DbContext)context);
-            var user = new ApplicationUser() { Email = climber.Email, UserName = climber.Username, Climber = climber };
+            //var store = new UserStore<ApplicationUser>((DbContext)context);
+            //var user = new ApplicationUser() { Email = climber.Email, UserName = climber.Username, Climber = climber };
             var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<ApplicationDbContext>()));
-            manager.Create(user, climber.Password);
+            //manager.Create(user, climber.Password);
 
             //// Configure validation logic for usernames
             manager.UserValidator = new UserValidator<ApplicationUser>(manager)

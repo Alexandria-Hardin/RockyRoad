@@ -19,7 +19,7 @@ namespace RockyRoad.Data
             return userIdentity;
         }
 
-        public virtual Climber Climber { get; set; }
+        //public virtual Climber Climber { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -38,6 +38,8 @@ namespace RockyRoad.Data
         public DbSet<Path> Paths { get; set; }
         public DbSet<Favorite> Favorites { get; set; }
         public DbSet<FavoritePath> FavoritePaths { get; set; }
+
+        public DbSet<Climber> Climbers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

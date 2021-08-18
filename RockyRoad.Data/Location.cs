@@ -19,6 +19,7 @@ namespace RockyRoad.Data
         public decimal Lattitude { get; set; }
         [Required]
         public decimal Longitude { get; set; }
+        //make sure to look into address being null 
         public string Address { get; set; }
         [Required]
         public string Description { get; set; }

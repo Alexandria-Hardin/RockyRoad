@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClimberService.cs" />
     <Compile Include="FavoritePathService.cs" />
     <Compile Include="FavoriteService.cs" />
     <Compile Include="LocationService.cs" />

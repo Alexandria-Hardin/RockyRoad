@@ -21,15 +21,15 @@ namespace RockyRoad.Data
             Advanced,
             Expert
         }
-        [Key]
+        [Key, ForeignKey("User")]
         public string ClimberId { get; set; }
-        [Required]
-        public string Username { get; set; }
-        [Required]
-        public string Email { get; set; }
-        [Required]
-        //figure out if password is encrypted 
-        public string Password { get; set; }
+        //[Required]
+        //public string Username { get; set; }
+        //[Required]
+        //public string Email { get; set; }
+        //[Required]
+        ////figure out if password is encrypted 
+        //public string Password { get; set; }
         [Required]
         public string FirstName { get; set; }
         [Required]

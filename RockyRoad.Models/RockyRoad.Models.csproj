@@ -54,6 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClimberCreate.cs" />
+    <Compile Include="ClimberDetail.cs" />
+    <Compile Include="ClimberEdit.cs" />
+    <Compile Include="ClimberListItem.cs" />
     <Compile Include="FavoriteCreate.cs" />
     <Compile Include="FavoriteDetail.cs" />
     <Compile Include="FavoriteEdit.cs" />
