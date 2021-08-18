@@ -1,5 +1,4 @@
-﻿@model IEnumerable<RockyRoad.Models.ClimberDetail>
-
+﻿@model RockyRoad.Models.ClimberCreate
 @{
     ViewBag.Title = "AddClimber";
 }
@@ -8,9 +7,18 @@
 
 <div class="form-group">
     @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+    @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+    @Html.LabelFor(model => model.LevelOfExperience, htmlAttributes: new { @class = "control-label col-md-2" })
+    @Html.LabelFor(model => model.User, htmlAttributes: new { @class = "control-label col-md-2" })
     <div class="col-md-10">
         @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
         @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+        @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+        @Html.EditorFor(model => model.LevelOfExperience, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.LevelOfExperience, "", new { @class = "text-danger" })
+        @Html.EditorFor(model => model.User, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.User, "", new { @class = "text-danger" })
     </div>
 </div>
 
@@ -19,5 +27,4 @@
         <input type="submit" value="Create" class="btn btn-default" />
     </div>
 </div>
-
 

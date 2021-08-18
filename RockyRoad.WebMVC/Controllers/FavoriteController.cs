@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using RockyRoad.Models;
 using RockyRoad.Services;
 
@@ -57,7 +58,7 @@ namespace RockyRoad.WebMVC.Controllers
         private FavoriteService CreateFavoriteService()
         {
             //figure out how to connect climberId
-            var climberId = ;
+            var climberId = User.Identity.GetUserId();
             var service = new FavoriteService(climberId);
             return service;
         }
