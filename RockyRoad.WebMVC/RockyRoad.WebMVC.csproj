@@ -241,12 +241,16 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Location\Index.cshtml" />
     <Content Include="Views\Climber\AddClimber.cshtml" />
+    <Content Include="Views\Path\Index.cshtml" />
+    <Content Include="Views\Path\Create.cshtml" />
+    <Content Include="Views\Path\Details.cshtml" />
+    <Content Include="Views\Path\Edit.cshtml" />
+    <Content Include="Views\Path\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\FavoritePath\" />
     <Folder Include="Views\Favorite\" />
-    <Folder Include="Views\Path\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

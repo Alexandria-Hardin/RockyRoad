@@ -14,7 +14,8 @@ namespace RockyRoad.WebMVC.Controllers
         // GET: Path
         public ActionResult Index()
         {
-            return View();
+            var model = new PathListItem[0];
+            return View(model);
         }
 
         //GET: Path
