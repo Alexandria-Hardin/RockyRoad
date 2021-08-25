@@ -25,6 +25,11 @@ namespace RockyRoad.WebMVC
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            //bundles.Add(new StyleBundle("~/bundles/map").Include(
+            //        "~/Content/bootstrap.csss",
+            //        "~/Content/jquery-ui.css",
+            //        "~/Content/map.css"));
         }
     }
 }

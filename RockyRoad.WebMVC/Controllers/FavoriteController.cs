@@ -14,7 +14,8 @@ namespace RockyRoad.WebMVC.Controllers
         // GET: Favorite
         public ActionResult Index()
         {
-            return View();
+            var model = new FavoriteListItem[0];
+            return View(model);
         }
 
         //GET: Favorite

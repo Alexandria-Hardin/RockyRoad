@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using RockyRoad.Data;
+using RockyRoad.Models;
 
 namespace RockyRoad.WebMVC.Controllers
 {
@@ -13,7 +14,8 @@ namespace RockyRoad.WebMVC.Controllers
         // GET: Climber
         public ActionResult Index()
         {
-            return View();
+            var model = new ClimberListItem[0];
+            return View(model);
         }
         public ActionResult AddClimber()
         {

@@ -13,7 +13,8 @@ namespace RockyRoad.WebMVC.Controllers
         // GET: Location
         public ActionResult Index()
         {
-            return View();
+            var model = new LocationListItem[0];
+            return View(model);
         }
 
         //GET: Location
