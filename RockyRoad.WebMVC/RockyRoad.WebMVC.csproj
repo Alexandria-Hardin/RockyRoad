@@ -256,6 +256,9 @@
     <Content Include="Views\Favorite\Edit.cshtml" />
     <Content Include="Views\Favorite\Delete.cshtml" />
     <Content Include="Views\Climber\Index.cshtml" />
+    <Content Include="Views\Climber\Details.cshtml" />
+    <Content Include="Views\Climber\Edit.cshtml" />
+    <Content Include="Views\Climber\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
