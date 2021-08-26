@@ -9,9 +9,9 @@ namespace RockyRoad.Models
 {
     public class ClimberListItem
     {
-        public string ClimberId { get; set; }
+        public int ClimberId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public ApplicationUser User { get; set; }
+        public string UserId { get; set; }
     }
 }

@@ -19,7 +19,7 @@ namespace RockyRoad.Data
             return userIdentity;
         }
 
-        //public virtual Climber Climber { get; set; }
+        public virtual Climber Climber { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

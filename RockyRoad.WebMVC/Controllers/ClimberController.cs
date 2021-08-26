@@ -18,7 +18,7 @@ namespace RockyRoad.WebMVC.Controllers
             var model = new ClimberListItem[0];
             return View(model);
         }
-        public ActionResult AddClimber()
+        public ActionResult Create()
         {
             return View();
 
@@ -26,28 +26,24 @@ namespace RockyRoad.WebMVC.Controllers
         private readonly ApplicationDbContext db = new ApplicationDbContext();
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AddClimber(Climber c)
+        public ActionResult Create(Climber c)
         {
-            var currentUserId = User.Identity.GetUserId();
-            var climberinfo = db.Climbers.FirstOrDefault(d => d.ClimberId == currentUserId);
-            if (climberinfo == null)
+            var _userId = User.Identity.GetUserId();
+            if (c == null)
             {
-                climberinfo = db.Climbers.Create();
-                climberinfo.ClimberId = currentUserId;
-                db.Climbers.Add(climberinfo);
+                c = db.Climbers.Create();
+                db.Climbers.Add(c);
             }
-            climberinfo.FirstName = c.FirstName;
-            climberinfo.LastName = c.LastName;
-            climberinfo.LevelOfExperience = c.LevelOfExperience;
-            climberinfo.Favorites = c.Favorites;
-            climberinfo.User = c.User;
-            db.SaveChanges();
+            c.FirstName = c.FirstName;
+            c.LastName = c.LastName;
+            c.LevelOfExperience = c.LevelOfExperience;
+            c.UserId = c.UserId;
 
             return View();
 
         }
 
-        public ActionResult Details(string id)
+        public ActionResult Details(int id)
         {
             var svc = CreateClimberService();
             var model = svc.GetClimberById(id);
@@ -61,7 +57,7 @@ namespace RockyRoad.WebMVC.Controllers
             return service;
         }
 
-        public ActionResult Edit(string id)
+        public ActionResult Edit(int id)
         {
             var service = CreateClimberService();
             var detail = service.GetClimberById(id);
@@ -71,16 +67,16 @@ namespace RockyRoad.WebMVC.Controllers
                     FirstName = detail.FirstName,
                     LastName = detail.LastName,
                     LevelOfExperience = detail.LevelOfExperience,
-                    User = detail.User
+                    UserId = detail.UserId
                 };
             return View(model);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(string id, ClimberEdit model)
+        public ActionResult Edit(int id, ClimberEdit model)
         {
             if (!ModelState.IsValid) return View(model);
-            if (model.ClimberId != id)
+            if (model.ClimberId == id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);
@@ -95,7 +91,7 @@ namespace RockyRoad.WebMVC.Controllers
             return View(model);
         }
         [ActionName("Delete")]
-        public ActionResult Delete(string id)
+        public ActionResult Delete(int id)
         {
             var svc = CreateClimberService();
             var model = svc.GetClimberById(id);
@@ -105,7 +101,7 @@ namespace RockyRoad.WebMVC.Controllers
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeletePost(string id)
+        public ActionResult DeletePost(int id)
         {
             var service = CreateClimberService();
             service.DeleteClimber(id);

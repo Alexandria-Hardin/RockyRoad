@@ -21,8 +21,8 @@ namespace RockyRoad.Data
             Advanced,
             Expert
         }
-        [Key, ForeignKey("User")]
-        public string ClimberId { get; set; }
+        [Key]
+        public int ClimberId { get; set; }
         //[Required]
         //public string Username { get; set; }
         //[Required]
@@ -37,8 +37,9 @@ namespace RockyRoad.Data
         [Required]
         public ExperienceLevel LevelOfExperience { get; set; }
         public virtual ICollection<Favorite> Favorites { get; set; } = new List<Favorite>();
-
-        public virtual ApplicationUser User { get; set; }
+        [ForeignKey(nameof(ApplicationUser))]
+        public string UserId { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
 
     }
 }

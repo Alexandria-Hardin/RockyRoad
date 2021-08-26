@@ -18,7 +18,7 @@ namespace RockyRoad.Services
                     FirstName = model.FirstName,
                     LastName = model.LastName,
                     LevelOfExperience = model.LevelOfExperience,
-                    User = model.User,
+                    UserId = model.UserId,
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -39,14 +39,14 @@ namespace RockyRoad.Services
                         {
                             FirstName = e.FirstName,
                             LastName = e.LastName,
-                            User = e.User,
+                            UserId = e.UserId,
                             ClimberId = e.ClimberId
                         }
                         );
                 return query.ToArray();
             }
         }
-        public ClimberDetail GetClimberById(string id)
+        public ClimberDetail GetClimberById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -62,7 +62,7 @@ namespace RockyRoad.Services
                         LastName = entity.LastName,
                         LevelOfExperience = entity.LevelOfExperience,
                         Favorites = entity.Favorites,
-                        User = entity.User
+                        UserId = entity.UserId
                     };
             }
         }
@@ -78,12 +78,12 @@ namespace RockyRoad.Services
                 entity.FirstName = model.FirstName;
                 entity.LastName = model.LastName;
                 entity.LevelOfExperience = model.LevelOfExperience;
-                entity.User = model.User;
+                entity.UserId = model.UserId;
 
                 return ctx.SaveChanges() == 1;
             }
         }
-        public bool DeleteClimber(string climberId)
+        public bool DeleteClimber(int climberId)
         {
             using (var ctx = new ApplicationDbContext())
             {
