@@ -21,25 +21,25 @@ namespace RockyRoad.WebMVC.Controllers
         public ActionResult Create()
         {
             return View();
-
         }
-        private readonly ApplicationDbContext db = new ApplicationDbContext();
+ 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Climber c)
         {
-            var _userId = User.Identity.GetUserId();
-            if (c == null)
-            {
-                c = db.Climbers.Create();
-                db.Climbers.Add(c);
-            }
-            c.FirstName = c.FirstName;
-            c.LastName = c.LastName;
-            c.LevelOfExperience = c.LevelOfExperience;
-            c.UserId = c.UserId;
+            if (!ModelState.IsValid) return View(c);
+            c.UserId = User.Identity.GetUserId();
 
-            return View();
+            var service = CreateClimberService();
+
+            if (service.CreateClimber(c))
+            {
+                TempData["SaveResult"] = "The climber was created.";
+                return RedirectToAction("Index");
+            };
+            ModelState.AddModelError("", "Climber could not be added.");
+            return View(c);
+
 
         }
 

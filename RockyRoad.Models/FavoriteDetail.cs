@@ -12,6 +12,6 @@ namespace RockyRoad.Models
         public int FavoriteId { get; set; }
         public string Name { get; set; }
         public virtual ICollection<FavoritePath> FavoritePaths { get; set; } 
-        public string ClimberId { get; set; }
+        public string UserId { get; set; }
     }
 }

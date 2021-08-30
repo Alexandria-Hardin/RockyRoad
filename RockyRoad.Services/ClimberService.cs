@@ -10,7 +10,7 @@ namespace RockyRoad.Services
 {
     public class ClimberService
     {
-        public bool CreateClimber(ClimberCreate model)
+        public bool CreateClimber(Climber model)
         {
             var entity =
                 new Climber()

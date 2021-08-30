@@ -10,17 +10,18 @@ namespace RockyRoad.Services
 {
     public class FavoriteService
     {
-        private readonly string _climberId;
-        public FavoriteService(string climberId)
+        private readonly string _userId;
+        public FavoriteService(string userId)
         {
-            _climberId = climberId;
+            _userId = userId;
         }
+
         public bool CreateFavorite(FavoriteCreate model)
         {
             var entity =
                 new Favorite()
                 {
-                    ClimberId = _climberId,
+                    UserId = _userId,
                     Name = model.Name
                 };
             using (var ctx = new ApplicationDbContext())
@@ -36,14 +37,14 @@ namespace RockyRoad.Services
                 var query =
                     ctx
                     .Favorites
-                    .Where(e => e.ClimberId == _climberId)
+                    .Where(e => e.UserId == _userId)
                     .Select(
                         e =>
                         new FavoriteListItem
                         {
                             FavoriteId = e.FavoriteId,
                             Name = e.Name,
-                            ClimberId = e.ClimberId
+                            UserId = e.UserId
                         }
                         );
                 return query.ToArray();
@@ -56,13 +57,13 @@ namespace RockyRoad.Services
                 var entity =
                     ctx
                     .Favorites
-                    .Single(e => e.FavoriteId == id && e.ClimberId == _climberId);
+                    .Single(e => e.FavoriteId == id && e.UserId == _userId);
                 return
                     new FavoriteDetail
                     {
                         FavoriteId = entity.FavoriteId,
                         Name = entity.Name,
-                        ClimberId= entity.ClimberId,
+                        UserId= entity.UserId,
                         FavoritePaths = entity.FavoritePaths
                     };
             }
@@ -81,7 +82,7 @@ namespace RockyRoad.Services
 
                         FavoriteId = entity.FavoriteId,
                         Name = entity.Name,
-                        ClimberId = entity.ClimberId,
+                        UserId = entity.UserId,
                         FavoritePaths = entity.FavoritePaths
                     };
             }
@@ -93,7 +94,7 @@ namespace RockyRoad.Services
                 var entity =
                     ctx
                     .Favorites
-                    .Single(e => e.FavoriteId == model.FavoriteId && e.ClimberId == _climberId);
+                    .Single(e => e.FavoriteId == model.FavoriteId && e.UserId == _userId);
                 entity.Name = model.Name;
 
                 return ctx.SaveChanges() == 1;
@@ -106,7 +107,7 @@ namespace RockyRoad.Services
                 var entity =
                     ctx
                     .Favorites
-                    .Single(e => e.FavoriteId == favoriteId && e.ClimberId == _climberId);
+                    .Single(e => e.FavoriteId == favoriteId && e.UserId == _userId);
                 ctx.Favorites.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }

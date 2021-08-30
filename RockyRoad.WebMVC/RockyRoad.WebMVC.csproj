@@ -259,6 +259,7 @@
     <Content Include="Views\Climber\Edit.cshtml" />
     <Content Include="Views\Climber\Delete.cshtml" />
     <Content Include="Views\Climber\Create.cshtml" />
+    <Content Include="Views\Shared\map.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
