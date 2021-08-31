@@ -106,5 +106,31 @@ namespace RockyRoad.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+        //Joining Table
+        public bool CreateFavoritePath(FavoritePathCreate model)
+        {
+            var entity =
+                new FavoritePath()
+                {
+                    PathId = model.PathId,
+                    FavoriteId = model.FavoriteId
+                };
+            using (var ctx = new ApplicationDbContext())
+            {
+                ctx.FavoritePaths.Add(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeletePathFromFavorites(int pathId, int favoriteId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var foundPath = ctx.FavoritePaths.Single(s => s.PathId == pathId && s.FavoriteId == favoriteId);
+
+                ctx.FavoritePaths.Remove(foundPath);
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

@@ -263,6 +263,7 @@
     <Content Include="Views\Shared\map.cshtml" />
     <Content Include="Views\FavoritePath\Create.cshtml" />
     <Content Include="Views\FavoritePath\Delete.cshtml" />
+    <Content Include="Views\Favorite\CreatePathFavorite.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
