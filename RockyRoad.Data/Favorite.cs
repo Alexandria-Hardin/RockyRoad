@@ -16,8 +16,8 @@ namespace RockyRoad.Data
         public string Name { get; set; }
         public virtual ICollection<FavoritePath> FavoritePaths { get; set; } = new List<FavoritePath>();
 
-        [ForeignKey(nameof(ApplicationUser))]
-        public string UserId { get; set; }
+        [ForeignKey(nameof(Climber))]
+        public int ClimberId { get; set; }
         public virtual Climber Climber { get; set; }
     }
 }

@@ -14,8 +14,9 @@ namespace RockyRoad.WebMVC.Controllers
         // GET: Favorite
         public ActionResult Index()
         {
-            var model = new FavoriteListItem[0];
-            return View(model);
+                var service = new FavoriteService();
+                var model = service.GetFavorites();
+                return View(model);
         }
 
         //GET: Favorite
@@ -49,18 +50,17 @@ namespace RockyRoad.WebMVC.Controllers
 
             return View(model);
         }
-        public ActionResult Details(string name)
-        {
-            var svc = CreateFavoriteService();
-            var model = svc.GetFavoriteByName(name);
+        //public ActionResult Details(string name)
+        //{
+        //    var svc = CreateFavoriteService();
+        //    var model = svc.GetFavoriteByName(name);
 
-            return View(model);
-        }
+        //    return View(model);
+        //}
         private FavoriteService CreateFavoriteService()
         {
-            //figure out how to connect climberId
-            var climberId = User.Identity.GetUserId();
-            var service = new FavoriteService(climberId);
+           
+            var service = new FavoriteService();
             return service;
         }
         public ActionResult Edit(int id)

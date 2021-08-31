@@ -194,6 +194,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\RockyRoad - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -260,10 +261,12 @@
     <Content Include="Views\Climber\Delete.cshtml" />
     <Content Include="Views\Climber\Create.cshtml" />
     <Content Include="Views\Shared\map.cshtml" />
+    <Content Include="Views\FavoritePath\Create.cshtml" />
+    <Content Include="Views\FavoritePath\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\FavoritePath\" />
+    <Folder Include="Assets\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

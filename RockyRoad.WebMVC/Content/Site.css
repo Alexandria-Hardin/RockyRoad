@@ -27,5 +27,16 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    background: url(../Assets/Climb1.jpg) no-repeat center center fixed;
+    background-size: cover;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
 }
+
+.card-img-overlay {
+    position: absolute;
+    border-radius: calc(.25rem - 1px);
+}
+
+
 

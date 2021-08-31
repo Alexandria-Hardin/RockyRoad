@@ -13,7 +13,8 @@ namespace RockyRoad.WebMVC.Controllers
         // GET: Location
         public ActionResult Index()
         {
-            var model = new LocationListItem[0];
+            var service = new LocationService();
+            var model = service.GetLocations();
             return View(model);
         }
 
@@ -48,13 +49,13 @@ namespace RockyRoad.WebMVC.Controllers
 
             return View(model);
         }
-        public ActionResult Details(string state)
-        {
-            var svc = CreateLocationService();
-            var model = svc.GetLocationByState(state);
+        //public ActionResult Details(string state)
+        //{
+        //    var svc = CreateLocationService();
+        //    var model = svc.GetLocationByState(state);
 
-            return View(model);
-        }
+        //    return View(model);
+        //}
         private LocationService CreateLocationService()
         {
             var service = new LocationService();

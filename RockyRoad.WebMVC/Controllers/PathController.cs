@@ -14,8 +14,9 @@ namespace RockyRoad.WebMVC.Controllers
         // GET: Path
         public ActionResult Index()
         {
-            var model = new PathListItem[0];
-            return View(model);
+                var service = new PathService();
+                var model = service.GetPaths();
+                return View(model);
         }
 
         //GET: Path
@@ -49,13 +50,13 @@ namespace RockyRoad.WebMVC.Controllers
 
             return View(model);
         }
-        public ActionResult Details(DifficultyLevel levelOfDifficulty)
-        {
-            var svc = CreatePathService();
-            var model = svc.GetPathByDifficulty(levelOfDifficulty);
+        //public ActionResult Details(DifficultyLevel levelOfDifficulty)
+        //{
+        //    var svc = CreatePathService();
+        //    var model = svc.GetPathByDifficulty(levelOfDifficulty);
 
-            return View(model);
-        }
+        //    return View(model);
+        //}
         private PathService CreatePathService()
         {
             var service = new PathService();

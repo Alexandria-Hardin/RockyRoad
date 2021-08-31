@@ -62,6 +62,10 @@
     <Compile Include="FavoritePath.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Location.cs" />
+    <Compile Include="Migrations\202108302051508_UserChange.cs" />
+    <Compile Include="Migrations\202108302051508_UserChange.Designer.cs">
+      <DependentUpon>202108302051508_UserChange.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Path.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -69,6 +73,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202108302051508_UserChange.resx">
+      <DependentUpon>202108302051508_UserChange.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

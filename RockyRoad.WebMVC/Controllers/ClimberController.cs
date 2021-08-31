@@ -15,8 +15,9 @@ namespace RockyRoad.WebMVC.Controllers
         // GET: Climber
         public ActionResult Index()
         {
-            var model = new ClimberListItem[0];
-            return View(model);
+                var service = new ClimberService();
+                var model = service.GetClimbers();
+                return View(model);
         }
         public ActionResult Create()
         {
