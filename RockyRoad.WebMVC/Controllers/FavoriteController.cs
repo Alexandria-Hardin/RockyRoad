@@ -113,45 +113,45 @@ namespace RockyRoad.WebMVC.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult CreatePathFavorite(FavoritePathCreate model)
-        {
-            if (!ModelState.IsValid) return View(model);
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult CreatePathFavorite(FavoritePathCreate model)
+        //{
+        //    if (!ModelState.IsValid) return View(model);
 
-            var service = CreateFavoritePathService();
+        //    var service = CreateFavoritePathService();
 
-            if (service.CreateFavoritePath(model))
-            {
-                TempData["SaveResult"] = "Your path was added to favorites.";
-                return RedirectToAction("Index");
-            };
-            ModelState.AddModelError("", "Path could not be added to favorites.");
-            return View(model);
-        }
-        private FavoritePathService CreateFavoritePathService()
-        {
-            var service = new FavoritePathService();
-            return service;
-        }
-        [ActionName("Delete")]
-        public ActionResult Delete(int pathId, int favoriteId)
-        {
-            var svc = CreateFavoritePathService();
-            var model = svc.DeletePathFromFavorites(pathId, favoriteId);
+        //    if (service.CreateFavoritePath(model))
+        //    {
+        //        TempData["SaveResult"] = "Your path was added to favorites.";
+        //        return RedirectToAction("Index");
+        //    };
+        //    ModelState.AddModelError("", "Path could not be added to favorites.");
+        //    return View(model);
+        //}
+        //private FavoritePathService CreateFavoritePathService()
+        //{
+        //    var service = new FavoritePathService();
+        //    return service;
+        //}
+        //[ActionName("Delete")]
+        //public ActionResult Delete(int pathId, int favoriteId)
+        //{
+        //    var svc = CreateFavoritePathService();
+        //    var model = svc.DeletePathFromFavorites(pathId, favoriteId);
 
-            return View(model);
-        }
-        [HttpPost]
-        [ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeletePath(int pathId, int favoriteId)
-        {
-            var service = CreateFavoritePathService();
-            service.DeletePathFromFavorites(pathId, favoriteId);
-            TempData["SaveResult"] = "One of your favorite paths was deleted";
-            return RedirectToAction("Index");
-        }
+        //    return View(model);
+        //}
+        //[HttpPost]
+        //[ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeletePath(int pathId, int favoriteId)
+        //{
+        //    var service = CreateFavoritePathService();
+        //    service.DeletePathFromFavorites(pathId, favoriteId);
+        //    TempData["SaveResult"] = "One of your favorite paths was deleted";
+        //    return RedirectToAction("Index");
+        //}
 
     }
 }

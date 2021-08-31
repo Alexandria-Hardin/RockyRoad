@@ -25,24 +25,24 @@ namespace RockyRoad.Services
             }
         }
 
-        //public IEnumerable<FavoritePathListItem> GetFavoritePaths()
-        //{
-        //    using (var ctx = new ApplicationDbContext())
-        //    {
-        //        var query =
-        //            ctx
-        //            .FavoritePaths
-        //            .Select(
-        //                e =>
-        //                new FavoritePathListItem
-        //                {
-        //                    PathId = e.PathId,
-        //                    FavoriteId = e.FavoriteId 
-        //                }
-        //                );
-        //        return query.ToArray();
-        //    }
-        //}
+        public IEnumerable<FavoritePathListItem> GetFavoritePaths()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                    .FavoritePaths
+                    .Select(
+                        e =>
+                        new FavoritePathListItem
+                        {
+                            PathId = e.PathId,
+                            FavoriteId = e.FavoriteId
+                        }
+                        );
+                return query.ToArray();
+            }
+        }
 
         public bool DeletePathFromFavorites(int pathId, int favoriteId)
         {

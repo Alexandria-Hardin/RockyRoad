@@ -23,23 +23,28 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.FavoriteId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ClimberId)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.FavoriteId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.FavoriteId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.FavoriteId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FavoriteId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClimberId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.FavoriteId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.FavoriteId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.FavoriteId })
+            </td>
+        </tr>
+    }
+    <p>
+        Want to add a climbing path to one of your favorites?
+    </p>
+    <p><a class="btn btn-default" href="~/FavoritePath/Create">Add to favorites &raquo;</a></p>
 
 </table>

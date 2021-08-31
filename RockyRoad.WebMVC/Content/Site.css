@@ -38,5 +38,10 @@ html, body {
     border-radius: calc(.25rem - 1px);
 }
 
+.jumbotron{
+
+background-color: transparent !important;
+}
+
 
 
