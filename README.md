@@ -1,6 +1,6 @@
 # RockyRoad
 # About this Application
-Rocky Road is a .NET Framework MVC 5 Web Application using n-tier architecture targeting anyone who likes to rock climb! Each class has full CRUD properties to be able to add, search, edit, and delete information. This app was created to connect climbers to hidden gems all around the world1 You can search locations and find the climbing paths at each place, as well as being able to add this routes to your own favorites list connected to your climber!
+Rocky Road is a .NET Framework MVC 5 Web Application using n-tier architecture targeting anyone who likes to rock climb! Each class has full CRUD properties to be able to add, search, edit, and delete information. This app was created to connect climbers to hidden gems all around the world! You can search locations and find the climbing paths at each place, as well as being able to add this routes to your own favorites list connected to your climber!
 
 
 # System Requirements
