@@ -14,6 +14,7 @@ namespace RockyRoad.WebMVC.Controllers
         public ActionResult Index()
         {
             return View();
+
         }
         //GET: FavoritePath
         //Get/Favorite/Create
@@ -32,7 +33,7 @@ namespace RockyRoad.WebMVC.Controllers
             if (service.CreateFavoritePath(model))
             {
                 TempData["SaveResult"] = "Your path was added to favorites.";
-                return RedirectToAction("Index");
+                return RedirectToAction("Details","Favorite", new { id = model.FavID});
             };
             ModelState.AddModelError("", "Path could not be added to favorites.");
             return View(model);
@@ -43,20 +44,20 @@ namespace RockyRoad.WebMVC.Controllers
             return service;
         }
         [ActionName("Delete")]
-        public ActionResult Delete(int pathId, int favoriteId)
+        public ActionResult Delete(int pathId, int favID)
         {
             var svc = CreateFavoritePathService();
-            var model = svc.DeletePathFromFavorites(pathId, favoriteId);
+            var model = svc.DeletePathFromFavorites(pathId, favID);
 
             return View(model);
         }
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeletePost(int pathId, int favoriteId)
+        public ActionResult DeletePost(int pathId, int favID)
         {
             var service = CreateFavoritePathService();
-            service.DeletePathFromFavorites(pathId, favoriteId);
+            service.DeletePathFromFavorites(pathId, favID);
             TempData["SaveResult"] = "One of your favorite paths was deleted";
             return RedirectToAction("Index");
         }

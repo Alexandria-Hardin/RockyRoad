@@ -16,7 +16,7 @@ namespace RockyRoad.Services
                 new FavoritePath()
                 {
                     PathId = model.PathId,
-                    FavoriteId = model.FavoriteId
+                    FavID = model.FavID
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -37,7 +37,7 @@ namespace RockyRoad.Services
                         new FavoritePathListItem
                         {
                             PathId = e.PathId,
-                            FavoriteId = e.FavoriteId
+                            FavID = e.FavID
                         }
                         );
                 return query.ToArray();
@@ -48,7 +48,7 @@ namespace RockyRoad.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var foundPath = ctx.FavoritePaths.Single(s => s.PathId == pathId && s.FavoriteId == favoriteId);
+                var foundPath = ctx.FavoritePaths.Single(s => s.PathId == pathId && s.FavID == favoriteId);
 
                 ctx.FavoritePaths.Remove(foundPath);
                 return ctx.SaveChanges() == 1;

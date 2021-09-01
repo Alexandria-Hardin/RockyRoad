@@ -9,6 +9,6 @@ namespace RockyRoad.Models
     public class FavoritePathCreate
     {
         public int PathId { get; set; }
-        public int FavoriteId { get; set; }
+        public int FavID { get; set; }
     }
 }

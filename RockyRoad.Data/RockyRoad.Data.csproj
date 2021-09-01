@@ -66,6 +66,10 @@
     <Compile Include="Migrations\202108302051508_UserChange.Designer.cs">
       <DependentUpon>202108302051508_UserChange.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108311839295_changing name of FavoriteId.cs" />
+    <Compile Include="Migrations\202108311839295_changing name of FavoriteId.Designer.cs">
+      <DependentUpon>202108311839295_changing name of FavoriteId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Path.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,6 +81,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202108302051508_UserChange.resx">
       <DependentUpon>202108302051508_UserChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108311839295_changing name of FavoriteId.resx">
+      <DependentUpon>202108311839295_changing name of FavoriteId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

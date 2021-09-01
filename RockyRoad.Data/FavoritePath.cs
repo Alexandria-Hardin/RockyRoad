@@ -17,7 +17,7 @@ namespace RockyRoad.Data
 
         [Key, Column(Order = 1)]
         [ForeignKey(nameof(Favorite))]
-        public int FavoriteId { get; set; }
+        public int FavID { get; set; }
         public virtual Favorite Favorite { get; set; }
     }
 }

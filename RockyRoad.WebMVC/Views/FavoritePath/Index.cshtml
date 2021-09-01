@@ -15,23 +15,24 @@
             @Html.DisplayNameFor(model => model.PathId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FavoriteId)
+            @Html.DisplayNameFor(model => model.FavID)
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model) 
+{
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.PathId)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.FavoriteId)
+            @Html.DisplayFor(modelItem => item.FavID)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.FavoriteId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.FavoriteId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.FavoriteId })
+            @Html.ActionLink("Edit", "Edit", new { id=item.FavID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FavID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FavID })
         </td>
     </tr>
 }

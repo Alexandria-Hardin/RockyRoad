@@ -33,7 +33,14 @@ html, body {
     -webkit-tap-highlight-color: transparent;
 }
 
-.card-img-overlay {
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #ffffff;
+    background-color: #fff;
+    font-variant-caps: unicase;
+    font-weight: bold;
     position: absolute;
     border-radius: calc(.25rem - 1px);
 }
@@ -42,6 +49,45 @@ html, body {
 
 background-color: transparent !important;
 }
+
+.box {
+    /* background-color:darkgray;
+    opacity:0.5;
+    z-index:auto;*/
+    background: slategray;
+    padding: 5px;
+    border: 1px solid lightgray;
+    margin: 5px;
+    background: rgb(136, 66, 213, 0.4)
+}
+.table {
+    background: rgb(136, 66, 213, 0.4);
+    /*background: rgb(136, 66, 213, 0.6);*/
+    text-align-last: center;
+}
+
+a {
+    color: midnightblue;
+    text-decoration: revert;
+}
+
+p {
+    z-index: 1;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+}
+
+
+/*p{
+    background-color: slategray;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index:auto;
+}*/
+
+/*div{
+    opacity: 0.5;
+}*/
 
 
 
